@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!-- Different way of installation: https://htmx.org/docs/#installing -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://unpkg.com/htmx.org@1.9.4"
+      integrity="sha384-zUfuhFKKZCbHTY6aRR46gxiqszMk5tcHjsVFxnUo8VMus4kHGVdIYVbOYYNlKmHV"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- 
+    hx-get: GET request
+    hx-target: replace the element with the id parent-div in the DOM
+    -->
+    <button
+      hx-get="https://jsonplaceholder.typicode.com/posts"
+      hx-trigger="click"
+      hx-target="#parent-div"
+      hx-swap="outerHTML"
+    >
+      Click Me!
+    </button>
+    <div id="parent-div"></div>
+  </body>
+</html>
